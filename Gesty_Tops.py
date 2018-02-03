@@ -52,9 +52,7 @@ for i in range(8, 33):
     entrada=raiz[i]
     title=entrada[2]
     print (i - 7), " - ", title.text
-
 print
-
 op = raw_input("Desea descargar de alguna cancion? (S/N)")
 if op == "S":
     print
