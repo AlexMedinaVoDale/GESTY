@@ -10,17 +10,15 @@ class MiFrame(wx.Frame):
     def __init__(self,*args,**kwargs):
         wx.Frame.__init__(self,*args,**kwargs)
 
-        # Agregando botones
         self.button1 = wx.Button(self, -1, u"BUSCAR", size=(300,20), pos=(10,10))
         self.button2 = wx.Button(self, -1, u"SALIR", size=(300,20), pos=(10,110))
         self.A = wx.TextCtrl(self, wx.ID_ANY, pos=(10,35), size=(300,20))
         self.st1 = wx.StaticText(self, label=' ', size=(300,20), pos=(10, 65))
         self.st2 = wx.StaticText(self, label='En espera...', size=(300,20), pos=(10, 85))
         self.SetBackgroundColour('#f0f0f0')
-        # Conectando el evento de un boton
+        
         self.Bind(wx.EVT_BUTTON, self.OnClick)
         
-        # Mostrando la interfaz
         self.Show()
         
     def OnClick(self,event):
@@ -43,7 +41,6 @@ class MiFrame(wx.Frame):
             video = pafy.new(url)
             best = video.getbest()
             self.st2.SetLabel("Descargando...")
-            #print best.url  Se usa para transmitir el video por vlc
             bestaudio = video.getbestaudio()
             pathf = "Musica"
             bestaudio.download(filepath=pathf)
