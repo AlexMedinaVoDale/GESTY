@@ -25,4 +25,3 @@ print video.duration
 bestaudio = video.getbestaudio()
 pathf = "Musica"
 bestaudio.download(filepath=pathf)
-
